@@ -9,7 +9,7 @@ submit.addEventListener('click',()=>{
     let sp=document.querySelector("#supplier").value;
     let formData={iName,uPrice,qt,sp};
 
-    fetch("http://localhost:1234/api/products",{
+    fetch("https://pdrill-backend.onrender.com/api/products",{
         method:'POST',
         body: JSON.stringify(formData),
         headers:{
@@ -31,7 +31,7 @@ window.addEventListener('load', ()=>{
 function getUsers(){
     let html=""
     //FETCH API
-    fetch('http://localhost:1234/api/products',{mode:'cors'})
+    fetch('https://pdrill-backend.onrender.com/api/products',{mode:'cors'})
     .then(response=>{
         console.log(response);
         return response.json();
@@ -47,4 +47,5 @@ function getUsers(){
     .catch(error=>{
         console.log(error);
     })
+
 }
