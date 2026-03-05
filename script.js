@@ -28,24 +28,50 @@ window.addEventListener('load', ()=>{
 })
 
 
+// function getUsers(){
+//     let html=""
+//     //FETCH API
+//     fetch('https://pdrill-backend.onrender.com/api/products',{mode:'cors'})
+//     .then(response=>{
+//         console.log(response);
+//         return response.json();
+//     })
+//     .then(data=>{
+//         console.log(data);
+//         data.forEach(element=>{
+//             html+=`<li> ${element.itemName} ${element.unitPrice} ${element.quantity} ${element.supplier}</li>`
+//         })
+
+//         content.innerHTML=html;
+//     })
+//     .catch(error=>{
+//         console.log(error);
+//     })
+
+// }
+
 function getUsers(){
-    let html=""
-    //FETCH API
+    let html="";
+
     fetch('https://pdrill-backend.onrender.com/api/products',{mode:'cors'})
     .then(response=>{
-        console.log(response);
         return response.json();
     })
     .then(data=>{
-        console.log(data);
         data.forEach(element=>{
-            html+=`<li> ${element.itemName} ${element.unitPrice} ${element.quantity} ${element.supplier}</li>`
-        })
+            html += `
+            <tr>
+                <td>${element.itemName}</td>
+                <td>${element.unitPrice}</td>
+                <td>${element.quantity}</td>
+                <td>${element.supplier}</td>
+            </tr>
+            `;
+        });
 
-        content.innerHTML=html;
+        content.innerHTML = html;
     })
     .catch(error=>{
         console.log(error);
-    })
-
+    });
 }
