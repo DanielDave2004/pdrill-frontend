@@ -50,6 +50,7 @@ window.addEventListener('load', ()=>{
 
 // }
 
+const content = document.querySelector("#tableBody");
 function getUsers(){
     let html="";
 
