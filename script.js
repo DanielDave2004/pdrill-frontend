@@ -39,7 +39,7 @@ window.addEventListener('load', ()=>{
 //     .then(data=>{
 //         console.log(data);
 //         data.forEach(element=>{
-//             html+=`<li> ${element.itemName} ${element.unitPrice} ${element.quantity} ${element.supplier}</li>`
+//             html+=`<li> ${element.itemName} ${parseFloat(element.unitPrice).toFixed(2)} ${element.quantity} ${element.supplier}</li>`
 //         })
 
 //         content.innerHTML=html;
@@ -63,7 +63,7 @@ function getUsers(){
             html += `
             <tr>
                 <td>${element.itemName}</td>
-                <td>${element.unitPrice}</td>
+                <td>${parseFloat(element.unitPrice).toFixed(2)}</td>
                 <td>${element.quantity}</td>
                 <td>${element.supplier}</td>
             </tr>
