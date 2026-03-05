@@ -1,94 +1,64 @@
-/* General Page Style */
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f5f5f5;
-    margin: 30px;
+    font-family: Arial;
+    background:#f5f5f5;
+    margin:40px;
 }
 
 h1{
-    text-align: center;
-    margin-bottom: 40px;
+    text-align:center;
 }
 
-/* Layout */
 #container{
-    display: flex;
-    gap: 50px;
-    align-items: flex-start;
+    display:flex;
+    gap:60px;
 }
 
-/* Form Style */
+/* Form */
 #form{
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 250px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background:white;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
-#form label{
-    font-weight: bold;
+input{
+    display:block;
+    margin-bottom:10px;
+    padding:6px;
+    width:200px;
 }
 
-#form input{
-    width: 100%;
-    padding: 6px;
-    margin-top: 5px;
-    margin-bottom: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+button{
+    padding:8px;
+    background:#4CAF50;
+    color:white;
+    border:none;
+    cursor:pointer;
 }
 
-#add{
-    width: 100%;
-    padding: 8px;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
+/* Table */
+table{
+    border-collapse: collapse;
+    width:600px;
+    background:white;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
-#add:hover{
-    background-color: #45a049;
+th, td{
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:center;
 }
 
-/* Table Style */
-#content{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background: white;
-    width: 500px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+th{
+    background:#333;
+    color:white;
 }
 
-/* Header Row */
-#content::before{
-    content: "Item Name        Unit Price        Quantity        Supplier";
-    display: block;
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-    letter-spacing: 1px;
+tr:nth-child(even){
+    background:#f2f2f2;
 }
 
-/* Table Rows */
-#content li{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-#content li:nth-child(even){
-    background-color: #f9f9f9;
-}
-
-#content li:hover{
-    background-color: #eef6ff;
+tr:hover{
+    background:#e6f2ff;
 }
