@@ -1,176 +1,94 @@
-/* styles.css */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* General Page Style */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    margin: 30px;
 }
 
-body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  background-color: #f5f7fa;
-  color: #2d3748;
-  line-height: 1.6;
-  min-height: 100vh;
-  padding: 2rem 1.5rem;
+h1{
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-h1 {
-  text-align: center;
-  color: #2c5282;
-  margin-bottom: 2.5rem;
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+/* Layout */
+#container{
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
 }
 
-/* Main container */
-#container {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  gap: 3rem;
-  flex-wrap: wrap;
-  justify-content: center;
+/* Form Style */
+#form{
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Form styling */
-#form {
-  background: white;
-  padding: 2.5rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  width: 100%;
-  max-width: 420px;
-  flex-shrink: 0;
+#form label{
+    font-weight: bold;
 }
 
-#form label {
-  display: block;
-  margin-bottom: 0.6rem;
-  font-weight: 600;
-  color: #4a5568;
-  font-size: 0.95rem;
+#form input{
+    width: 100%;
+    padding: 6px;
+    margin-top: 5px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-#form input[type="text"] {
-  width: 100%;
-  padding: 0.9rem 1rem;
-  margin-bottom: 1.4rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.2s ease;
+#add{
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-#form input[type="text"]:focus {
-  outline: none;
-  border-color: #4299e1;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+#add:hover{
+    background-color: #45a049;
 }
 
-#form button#add {
-  width: 100%;
-  padding: 1rem;
-  background: #3182ce;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  margin-top: 1rem;
+/* Table Style */
+#content{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: white;
+    width: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-#form button#add:hover {
-  background: #2b6cb0;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(49, 130, 206, 0.3);
+/* Header Row */
+#content::before{
+    content: "Item Name        Unit Price        Quantity        Supplier";
+    display: block;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
-#form button#add:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+/* Table Rows */
+#content li{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
-/* Product list */
-#content {
-  list-style: none;
-  width: 100%;
-  max-width: 650px;
+#content li:nth-child(even){
+    background-color: #f9f9f9;
 }
 
-#content li {
-  background: white;
-  padding: 1.4rem 1.6rem;
-  margin-bottom: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transition: all 0.2s ease;
-  border-left: 5px solid #4299e1;
-}
-
-#content li:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-}
-
-#content li:not(:last-child) {
-  margin-bottom: 1.2rem;
-}
-
-/* Make product info more readable */
-#content li {
-  display: grid;
-  grid-template-columns: 2.8fr 1fr 1fr 2fr;
-  gap: 1rem;
-  align-items: center;
-  font-size: 1.05rem;
-}
-
-#content li::before {
-  content: "•";
-  color: #4299e1;
-  font-size: 1.6rem;
-  margin-right: 0.5rem;
-  line-height: 1;
-}
-
-/* Responsive design */
-@media (max-width: 900px) {
-  #container {
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5rem;
-  }
-
-  #form {
-    max-width: 500px;
-  }
-
-  #content li {
-    grid-template-columns: 1fr;
-    gap: 0.6rem;
-    padding: 1.6rem;
-  }
-
-  #content li::before {
-    display: none;
-  }
-}
-
-@media (max-width: 500px) {
-  h1 {
-    font-size: 2rem;
-  }
-
-  #form {
-    padding: 1.8rem 1.4rem;
-  }
-
-  #form button#add {
-    padding: 0.9rem;
-    font-size: 1rem;
-  }
+#content li:hover{
+    background-color: #eef6ff;
 }
