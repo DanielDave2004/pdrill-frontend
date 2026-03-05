@@ -6,44 +6,64 @@ body{
 
 h1{
     text-align:center;
+    margin-bottom:30px;
 }
 
+/* Flex Container */
 #container{
     display:flex;
-    gap:60px;
+    justify-content:center;
+    align-items:flex-start;
+    gap:50px;
+    flex-wrap:wrap;
 }
 
 /* Form */
 #form{
+    display:flex;
+    flex-direction:column;
     background:white;
     padding:20px;
     border-radius:8px;
     box-shadow:0 0 10px rgba(0,0,0,0.1);
+    min-width:220px;
 }
 
-input{
-    display:block;
-    margin-bottom:10px;
+#form label{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+#form input{
     padding:6px;
-    width:200px;
+    margin-top:4px;
 }
 
+/* Button */
 button{
+    margin-top:15px;
     padding:8px;
     background:#4CAF50;
     color:white;
     border:none;
     cursor:pointer;
+    border-radius:4px;
 }
 
-/* Table */
+button:hover{
+    background:#45a049;
+}
+
+/* Table Container */
 table{
+    flex:1;
     border-collapse: collapse;
-    width:600px;
+    min-width:500px;
     background:white;
     box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
+/* Table Cells */
 th, td{
     border:1px solid #ddd;
     padding:10px;
